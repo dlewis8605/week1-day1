@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Hey! Let's Learn HTML!</title>
-</head>
-<body>
+    <head>
+        <title>My First Web Page</title>
+    </head>
+    <body>
+        <!-- Container to wrap everything -->
+        <div id="container">
+            <!-- Brand of website -->
+            <header>My Web Site Brand</header>
+            <!-- Main Navigation -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="page2.html">About</a></li>
+                    <li>Gallery</li>
+                    <li><a href="page3.html">Contact</a></li>
+                </ul>
+            </nav> <!-- End of Main Navigation -->
 
-    <h1>So you want to learn how to make a webpage, eh?...</h1>
-    <h2>Let's start with some basics</h2>
-    <h3>You're gonna need:</h3>
-    <ul>
-        <li class="basiclistitem">A computer <img src="computer.png" width="25" height="25"></li>
-        <li class="basiclistitem">A comfy chair <img src="comfychair.png" width="25" height="25"></li>
-        <li class="basiclistitem">Some coffee <img src="coffee.png" width="25" height="25"></li>
-        <li class="basiclistitem">More coffee <img src="coffee.png" width="25" height="25"><img src="coffee.png" width="25" height="25"></li>
-        <li class="basiclistitem">Lots more coffee <img src="coffee.png" width="25" height="25"><img src="coffee.png" width="25" height="25"><img src="coffee.png" width="25" height="25"></li>
-    </ul>
+            <!-- Main Content -->
+            <main>
+                <h1>My First Heading</h1>
+                <p> My first paragraph. </p>
+                <img src="images/central_park.jpg" alt="Central Park" width="500">
+            </main><!-- End of Main Content -->
 
-    <h3>Next, you'll need to download one of these programs</h3>
-    <p>VS Code: <a href="https://visualstudio.microsoft.com/downloads/" target="_blank">Click Here!</a></p>
-    <p>Github Desktop: <a href="https://desktop.github.com/download/" target="_blank">Click Here!</a></p>
+            <!-- Footer Information -->
+            <footer>&copy; Copyright 2020</footer>
 
-    <h2>Now let's get coding!</h2>
-    <img src="cody.png">
+        </div> <!-- End Container -->
 
-</body>
+    </body>
 <html>
