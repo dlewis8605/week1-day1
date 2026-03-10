@@ -2,6 +2,16 @@
 <html>
     <head>
         <title>My First Web Page</title>
+        <!-- Embed Style Method-->
+         <style>
+            header {
+                background: url(images/central_park.jpg) 0 -200px no-repeat; /* place image as background */
+                background-size: 1500px;
+                /*background-position: 0 -200px;  <--- does the same as the "0 -200px" in first property above */
+                /*background-repeat: no-repeat; <--- does the same as the "no-repeat" in first property above */
+                height: 400px; /* give header some height to display the background image */
+            }
+         </style>
     </head>
     <body>
         <!-- Container to wrap everything -->
@@ -22,7 +32,6 @@
             <main>
                 <h1>My First Heading</h1>
                 <p> My first paragraph. </p>
-                <img src="images/central_park.jpg" alt="Central Park" width="500">
             </main><!-- End of Main Content -->
 
             <!-- Footer Information -->
