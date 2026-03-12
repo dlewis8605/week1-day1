@@ -3,6 +3,7 @@ header {
     background-size: 1500px;
     /*background-position: 0 -200px;  <--- does the same as the "0 -200px" in first property above */
     /*background-repeat: no-repeat; <--- does the same as the "no-repeat" in first property above */
+    height: 400px; give header some height to display the background image */
     padding-top: 100px;
     padding-left: 100px;
     font-weight: bold;
@@ -35,7 +36,7 @@ header {
         padding-top: 2px;
     }
     main {
-        height: 400px; /* give some height to get a better sense of how the page could look */
+        
     }
     main h1 {
         color: rgb(129, 141, 179);
