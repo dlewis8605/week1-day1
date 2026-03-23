@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="style.css">
 
     </head>
-    <body>
+    <body id="gallery">
         <!-- Container to wrap everything -->
         <div id="container">
             <!-- Brand of website -->
@@ -45,18 +45,27 @@
             var fileNames = []; //Declare an empty element to store image file names
             var imageList = []; //Declare an empty array to store html list that contains an image
             var image; //Declare an empty variable to store the assembled image list codes
-            var openList = "<li id='photo'>"; //Declare a variable to contain open list tag
+            var openList = "<li id='photo' style='list-style: none; text-align: center;'>"; //Declare a variable to contain open list tag
             var closeList = "</li>"; //Declare a variable to contain close list tag
+            var openCaptionTag = '<div class="caption">' //Declare a variable to contain open caption tag
+            var closeDivTag = '</div>' //Declare a variable to contain close caption tag
+            var openDescTag = '<div class="description">' //Declare a variable to contain open description tag
+            const captionTexts = ["BEAUTIFUL WINTER", "PEACEFUL HARBOR", "FROZEN LAKE", "SERENE RIVER", "WINTRY WILDLIFE", "GORGEOUS TUNDRA"]
+            const descTexts = ["Beautiful winter scenery in the morning", "A tranquil harbor surrounded by icy mountains", "An idyllic frozen waterscape", "A picturesque frigid river bend", "A cute doe makes its way through the snow", "An ethereal frozen tundra landscape"]
 
             //Create a loop to create 6 images starting with an index of 0
             for (var i=0; i<6; i++) {
                 fileNames.push("winterland"+(i+1)); //Create image file name and store in the array
-                photos.push("<img src='images/"+fileNames[i]+".jpg'>"); //Assemble file name into image element and store in an array
-                image = openList + photos[i] + closeList; //Assemble image element from array with list elements and store in a variable
+                photos.push("<img src='images/"+fileNames[i]+".jpg' style='width: 100%; display: block;'>"); //Assemble file name into image element and store in an array
+                image = openList +  photos[i] + openCaptionTag + captionTexts[i] + closeDivTag + openDescTag + descTexts[i] + closeDivTag + closeList; //Assemble image element from array with list elements and store in a variable
                 imageList.push(image); //Store(push) the assembled list codes into an array
 
                 //Display all six image codes stored in the array
-                document.getElementById("album").innerHTML = imageList;
+                album.style.display = "grid";
+                album.style.gridTemplateColumns = "1fr 1fr";
+                album.style.gap = "20px";
+                album.style.padding = "0"
+                document.getElementById("album").innerHTML = imageList.join("");
             }
         </script>
     </body>

@@ -78,8 +78,30 @@ input[type="submit"] {
     margin: 20px 0 10px 0;
     width: 100px;
 }
+#photo {
+    position: relative;
+    display: block;
+    line-height: 50px;
+}
 main #album #photo img {
     width: 400px;
+    cursor: pointer;
+}
+main #album #photo .description {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    bottom: 50%;
+    width: 70%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.75);
+    visibility: hidden;
+}
+main #album #photo:hover .description{
+    visibility: visible;
 }
 footer {
     height: 40px;
