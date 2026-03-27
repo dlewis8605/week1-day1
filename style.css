@@ -1,58 +1,83 @@
 header {
-    background: url(images/central_park.jpg) 0 -200px no-repeat; /* place image as background */
+    background: url(images/central_park.jpg) 0 -200px no-repeat;
+    /* place image as background */
     background-size: 1500px;
     /*background-position: 0 -200px;  <--- does the same as the "0 -200px" in first property above */
     /*background-repeat: no-repeat; <--- does the same as the "no-repeat" in first property above */
-    height: 400px; /* give header some height to display the background image */
+    height: 400px;
+    /* give header some height to display the background image */
     padding-top: 100px;
     padding-left: 100px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 li {
     list-style-type: none;
     display: inline;
     padding: 0 20px;
 }
+
 li a {
-    text-decoration: none; /* Remove Underline */
+    text-decoration: none;
+    /* Remove Underline */
 }
+
 li a:link {
-    color: #000; /* Before Click */
+    color: #000;
+    /* Before Click */
 }
+
 li a:visited {
-    color: #818db3; /* After Click */
+    color: #818db3;
+    /* After Click */
 }
+
 li a:hover {
-    color: #333; /* Mouse Over */
+    color: #333;
+    /* Mouse Over */
 }
+
 li a:active {
-    color: #753a30; /* Mouse Down */
+    color: #753a30;
+    /* Mouse Down */
 }
+
 nav {
-    background-color: rgb(255,245,238); /* Can use RGB color instead of hex codes for colors */
+    background-color: rgb(255, 245, 238);
+    /* Can use RGB color instead of hex codes for colors */
     height: 50px;
     text-align: center;
     padding-top: 2px;
 }
+
 main {
     margin: 50px;
 }
+
 main h1 {
     color: rgb(129, 141, 179);
     font-family: arial;
 }
+
 table {
     margin-top: 35px;
 }
-table, caption, th, td {
+
+table,
+caption,
+th,
+td {
     border: 1px solid #000;
 }
-th, td {
+
+th,
+td {
     width: 150px;
     height: 35px;
     text-align: center;
 }
+
 caption {
     text-transform: uppercase;
     font-weight: 600;
@@ -60,33 +85,41 @@ caption {
     padding-top: 15px;
     color: #753a30;
 }
+
 label {
     display: block;
     margin: 15px 0 0 0;
 }
+
 input {
     width: 300px;
 }
+
 input[type="radio"] {
     width: 25px;
 }
+
 textarea {
     width: 300px;
 }
+
 input[type="submit"] {
     display: block;
     margin: 20px 0 10px 0;
     width: 100px;
 }
+
 #photo {
     position: relative;
     display: block;
     line-height: 50px;
 }
+
 main #album #photo img {
     width: 400px;
     cursor: pointer;
 }
+
 main #album #photo .description {
     position: absolute;
     display: flex;
@@ -100,9 +133,11 @@ main #album #photo .description {
     background-color: rgba(255, 255, 255, 0.75);
     visibility: hidden;
 }
-main #album #photo:hover .description{
+
+main #album #photo:hover .description {
     visibility: visible;
 }
+
 footer {
     height: 40px;
     background-color: rgb(129, 141, 179);
