@@ -92,21 +92,22 @@ if (contactSelect) {
     contactSelect.addEventListener("change", function() {
         // Check what the current value of the dropdown is (email, phone, or none)
         var selectedOption = contactSelect.value;
-        
+
         if (selectedOption === "email") {
             // Show the email box, hide the phone box
             emailBox.style.display = "block";
             phoneBox.style.display = "none";
-            
+
         } else if (selectedOption === "phone") {
             // Show the phone box, hide the email box
             phoneBox.style.display = "block";
             emailBox.style.display = "none";
-            
+
         } else {
             // If they pick "Select One", hide both boxes
             emailBox.style.display = "none";
             phoneBox.style.display = "none";
         }
     });
+    
 }
