@@ -29,16 +29,22 @@
                         <legend>User personal information</legend>
                         <label>Enter your full name</label>
                         <input type="text" name="name">
-                        <label>Enter your email</label>
-                        <input type="text" name="email">
-                        <label>Enter your phone</label>
-                        <input type="text" name="phone">
                         <label>Select your gender</label>
-                        <input type="radio" name="gender" value="male">Male<input type="radio" name="gender" value="female">Female
-                        <select>
-                            <option>Email</option>
-                            <option>Phone</option>
+                        <input type="radio" name="gender" value="male">Male<input type="radio" name="gender" value="female">Female<br>
+                        <label>How should we contact you?</label>
+                        <select id="contactSelect">
+                            <option value="none">Select One</option>
+                            <option value="email">Email</option>
+                            <option value="phone">Phone</option>
                         </select>
+                        <div id="emailbox">
+                            <label>Enter your email</label>
+                            <input type="text" name="email">
+                        </div>
+                        <div id="phonebox">
+                            <label>Enter your phone</label>
+                            <input type="text" name="phone">
+                        </div>
                         <label>Tell us the reason of your visit today:</label>
                         <textarea rows="5" cols="30"></textarea><br>
                         <input type="submit" value="sign-up">
@@ -50,6 +56,7 @@
             <footer>&copy; Copyright 2020</footer>
 
         </div> <!-- End Container -->
+        <script src="script.js"></script>
 
     </body>
-<html>
+</html>

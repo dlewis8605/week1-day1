@@ -20,11 +20,14 @@ for (var i = 0; i < 6; i++) {
     imageList.push(image); //Store(push) the assembled list codes into an array
 
     //Display all six image codes stored in the array
-    album.style.display = "grid";
-    album.style.gridTemplateColumns = "1fr 1fr";
-    album.style.gap = "20px";
-    album.style.padding = "0"
-    document.getElementById("album").innerHTML = imageList.join("");
+    var myAlbum = document.getElementById("album");
+    if (myAlbum) {
+        myAlbum.style.display = "grid";
+        myAlbum.style.gridTemplateColumns = "1fr 1fr";
+        myAlbum.style.gap = "20px";
+        myAlbum.style.padding = "0"
+        myAlbum.innerHTML = imageList.join("");
+    }
 }
 
 // Info Box Variables
@@ -49,27 +52,61 @@ var openLink = "<a href='#' id='closeLink' style='color: #ffcc00; text-decoratio
 var closeLinkTag = "</a>";
 
 // Create Info Box within the gallery using innerHTML
-document.getElementById("album").insertAdjacentHTML("beforebegin", openBox + openHeading + closeHeading + openText + closeTextTag + openLink + closeText + closeLinkTag + closeBox);
+if (myAlbum) {
+    document.getElementById("album").insertAdjacentHTML("beforebegin", openBox + openHeading +  closeHeading + openText + closeTextTag + openLink + closeText + closeLinkTag + closeBox);
 
-// DOM Elements
-var infoBox = document.getElementById("infoBox");
-var infoHeader = document.getElementById("infoHeader");
-var infoTextPara = document.getElementById("infoText");
-var closeLink = document.getElementById("closeLink");
-var descriptions = document.querySelectorAll(".description");
+    // DOM Elements
+    var infoBox = document.getElementById("infoBox");
+    var infoHeader = document.getElementById("infoHeader");
+    var infoTextPara = document.getElementById("infoText");
+    var closeLink = document.getElementById("closeLink");
+    var descriptions = document.querySelectorAll(".description");
 
-// Add event listener to each description
-for (let i = 0; i < descriptions.length; i++) {
-    descriptions[i].addEventListener("click", function() {
-        // Set up DOM CSS properties innerHTML and visibility
-        infoHeader.innerHTML = captionTexts[i];
-        infoTextPara.innerHTML = infoTexts[i];
-        infoBox.style.visibility = "visible";
+    // Add event listener to each description
+    for (let i = 0; i < descriptions.length; i++) {
+        descriptions[i].addEventListener("click", function() {
+            // Set up DOM CSS properties innerHTML and visibility
+            infoHeader.innerHTML = captionTexts[i];
+            infoTextPara.innerHTML = infoTexts[i];
+            infoBox.style.visibility = "visible";
+        });
+    }
+
+    // Add event listener to close the info box
+    closeLink.addEventListener("click", function(e) {
+        e.preventDefault();
+        infoBox.style.visibility = "hidden";
+    });
+};
+/* Contact Form Scripts */
+var contactSelect = document.getElementById("contactSelect");
+var emailBox = document.getElementById("emailbox");
+var phoneBox = document.getElementById("phonebox");
+
+// Hide both boxes when the page initially loads and only run this code if the contact form is actually on the page
+if (contactSelect) {
+    emailBox.style.display = "none";
+    phoneBox.style.display = "none";
+
+    // Listen for changes on the dropdown menu
+    contactSelect.addEventListener("change", function() {
+        // Check what the current value of the dropdown is (email, phone, or none)
+        var selectedOption = contactSelect.value;
+        
+        if (selectedOption === "email") {
+            // Show the email box, hide the phone box
+            emailBox.style.display = "block";
+            phoneBox.style.display = "none";
+            
+        } else if (selectedOption === "phone") {
+            // Show the phone box, hide the email box
+            phoneBox.style.display = "block";
+            emailBox.style.display = "none";
+            
+        } else {
+            // If they pick "Select One", hide both boxes
+            emailBox.style.display = "none";
+            phoneBox.style.display = "none";
+        }
     });
 }
-
-// Add event listener to close the info box
-closeLink.addEventListener("click", function(e) {
-    e.preventDefault();
-    infoBox.style.visibility = "hidden";
-});
